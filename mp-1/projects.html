@@ -5,16 +5,20 @@
     <head>
         <meta charset="UTF-8">
         <title> Projects | Resume </title>
+        <link rel="stylesheet" href="resume_styles.css">
     </head>
 
     <body>
-    <header>
-        <h1>
-            Projects
-        </h1>
-        <p>
-            Below are some of the projects I've worked on. Take a look through them.
-        </p>
+
+        <header>
+            <h1>
+                Projects
+            </h1>
+            <p>
+                Below are some of the projects I've worked on. Take a look through them.
+            </p>
+        </header>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,89 +30,88 @@
                 <li><a href="projects.html">Projects</a></li>
             </ul>
         </nav>
-    </header>
 
-    <main>
+        <main>
+            <ul>
+                <!-- PYCO -->
+                <li>
+                    <h3><a href="https://github.com/akemisai/EdwardMarecos-AkemiSai-PYCO">Pyco</a></h3>
+                    <p>
+                        A social media platform where users can organize their wardrobe, request outfit suggestions, and engage with a community of fashion enthusiasts. <br>
+                        The app features a dynamic request system, public and private outfit sharing, and community recognition through leaderboards and achievements.
+                        <br><strong>Technologies Used:</strong> Kotlin, Firebase, Jetpack Compose.
+                    </p>
 
-        <ul>
-            <!-- PYCO -->
-            <li>
-                <h3><a href="https://github.com/akemisai/EdwardMarecos-AkemiSai-PYCO">Pyco</a></h3>
-                <p>
-                    A social media platform where users can organize their wardrobe, request outfit suggestions, and engage with a community of fashion enthusiasts. <br>
-                    The app features a dynamic request system, public and private outfit sharing, and community recognition through leaderboards and achievements.
-                    <br><strong>Technologies Used:</strong> Kotlin, Firebase, Jetpack Compose.
-                </p>
+                    <p>
+                        <strong>Collaborator:</strong> <a href="https://www.linkedin.com/in/akemi-sai-238607237/">Akemi Sai</a> <br>
+                    </p>
+                        <br><strong>Key Features:</strong>
+                    <ul>
+                        <li>Request-based outfit creation system with social features like likes, comments, and shares.</li>
+                        <li>Integrated Firebase for authentication and real-time database management.</li>
+                        <li>Dynamic UI/UX design using Jetpack Compose.</li>
+                    </ul>
+                </li>
 
-                <p>
-                    <strong>Collaborator:</strong> <a href="https://www.linkedin.com/in/akemi-sai-238607237/">Akemi Sai</a> <br>
-                </p>
+                <!-- Notes App -->
+                <li>
+                    <h3><a href="https://github.com/EdwardMarecos/cs412/tree/master/project">Collaborative Notes App</a></h3>
+                    <p>
+                        A platform designed to help users create, organize, and share study notes with a collaborative and social twist. The app includes functionality for liking,<br>
+                        bookmarking, and copying notes into personal libraries.
+                        <br><strong>Technologies Used:</strong> HTML, CSS, Django, JavaScript.
+                    </p>
+                        <br><strong>Key Features:</strong>
+                    <ul>
+                        <li>User-friendly interface for uploading and organizing notes.</li>
+                        <li>Social features like likes, bookmarks, and a feed for collaborative sharing.</li>
+                        <li>Integration with Django to manage user authentication and database queries.</li>
+                    </ul>
+                    <br>
+                    <!-- I chose to use the iframe to embed the video rather than save it to the files, since it was already uploaded-->
+                    <iframe width="789" height="444" src="https://www.youtube.com/embed/s3t-FEGyKUE" title="cs412_final_project_notesapp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </li>
+
+                <!-- Tetris -->
+                <li>
+                    <h3><a href="https://github.com/EdwardMarecos/tetris">Tetris AI</a></h3>
+                    <p>
+                        A neural network which excels at playing Tetris, learning from its prior mistakes and recognizing patterns <br>
+                        that lead to rewards.
+                        <br><strong>Technologies Used:</strong> Java, Flask, Sepia.
+                    </p>
                     <br><strong>Key Features:</strong>
-                <ul>
-                    <li>Request-based outfit creation system with social features like likes, comments, and shares.</li>
-                    <li>Integrated Firebase for authentication and real-time database management.</li>
-                    <li>Dynamic UI/UX design using Jetpack Compose.</li>
-                </ul>
-            </li>
+                    <ul>
+                        <li>Designed and implemented a Tetris-playing AI using a neural network-based Q-learning agent.</li>
+                        <li>Engineered a multi-layer neural network to predict optimal moves, utilizing features like board configuration, column heights, and well depths to inform decision-making.</li>
+                        <li>Developed a custom reward function to enhance AI performance by incentivizing favorable board states and penalizing risky configurations.</li>
+                        <li>Trained the AI to adapt its strategy dynamically, resulting in improved gameplay and higher scores during testing phases.</li>
+                    </ul>
+                </li>
 
-            <!-- Notes App -->
-            <li>
-                <h3><a href="https://github.com/EdwardMarecos/cs412/tree/master/project">Collaborative Notes App</a></h3>
-                <p>
-                    A platform designed to help users create, organize, and share study notes with a collaborative and social twist. The app includes functionality for liking,<br>
-                    bookmarking, and copying notes into personal libraries.
-                    <br><strong>Technologies Used:</strong> HTML, CSS, Django, JavaScript.
-                </p>
-                    <br><strong>Key Features:</strong>
-                <ul>
-                    <li>User-friendly interface for uploading and organizing notes.</li>
-                    <li>Social features like likes, bookmarks, and a feed for collaborative sharing.</li>
-                    <li>Integration with Django to manage user authentication and database queries.</li>
-                </ul>
-                <br>
-                <!-- I chose to use the iframe to embed the video rather than save it to the files, since it was already uploaded-->
-                <iframe width="789" height="444" src="https://www.youtube.com/embed/s3t-FEGyKUE" title="cs412_final_project_notesapp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </li>
+                <!-- Battleship -->
+                <li>
+                    <h3><a href="https://github.com/EdwardMarecos/Battleship-AI">Battleship AI</a></h3>
+                    <p>
+                        A multiplayer web-based implementation of the classic strategy game Battleship. The project involved designing the game logic, user interaction, and <br>
+                        game state management for competitive play.
+                        <br><strong>Technologies Used:</strong> Java, Flask, Sepia.
+                    </p>
+                        <br><strong>Key Features:</strong>
+                    <ul>
+                        <li>Designed and implemented game logic and intelligent AI to provide a competitive gameplay experience.</li>
+                        <li>Real-time multiplayer gameplay with a turn-based system.</li>
+                        <li>Backend implementation using Flask to manage game states and interactions.</li>
+                    </ul>
+                </li>
+            </ul>
 
-            <!-- Tetris -->
-            <li>
-                <h3><a href="https://github.com/EdwardMarecos/tetris">Tetris AI</a></h3>
-                <p>
-                    A neural network which excels at playing Tetris, learning from its prior mistakes and recognizing patterns <br>
-                    that lead to rewards.
-                    <br><strong>Technologies Used:</strong> Java, Flask, Sepia.
-                </p>
-                <br><strong>Key Features:</strong>
-                <ul>
-                    <li>Designed and implemented a Tetris-playing AI using a neural network-based Q-learning agent.</li>
-                    <li>Engineered a multi-layer neural network to predict optimal moves, utilizing features like board configuration, column heights, and well depths to inform decision-making.</li>
-                    <li>Developed a custom reward function to enhance AI performance by incentivizing favorable board states and penalizing risky configurations.</li>
-                    <li>Trained the AI to adapt its strategy dynamically, resulting in improved gameplay and higher scores during testing phases.</li>
-                </ul>
-            </li>
+        </main>
 
-            <!-- Battleship -->
-            <li>
-                <h3><a href="https://github.com/EdwardMarecos/Battleship-AI">Battleship AI</a></h3>
-                <p>
-                    A multiplayer web-based implementation of the classic strategy game Battleship. The project involved designing the game logic, user interaction, and <br>
-                    game state management for competitive play.
-                    <br><strong>Technologies Used:</strong> Java, Flask, Sepia.
-                </p>
-                    <br><strong>Key Features:</strong>
-                <ul>
-                    <li>Designed and implemented game logic and intelligent AI to provide a competitive gameplay experience.</li>
-                    <li>Real-time multiplayer gameplay with a turn-based system.</li>
-                    <li>Backend implementation using Flask to manage game states and interactions.</li>
-                </ul>
-            </li>
-        </ul>
-
-    </main>
+        <footer>
+            <p>All rights Reserved by Edward Marecos <a href="">Credits</a>&#169</p>
+        </footer>
 
     </body>
 
-    <footer>
-        <p>All rights Reserved by Edward Marecos <a href="">Credits</a>&#169</p>
-    </footer>
 </html>
