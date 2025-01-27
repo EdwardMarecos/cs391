@@ -1,0 +1,67 @@
+/*css styling file for resume mp-1*/
+
+main {
+    height: 100vh;
+    margin-right: 15%;
+    max-width: 75%;
+    background-color: lightgray;
+}
+
+/*list styling*/
+li {
+    display: inline;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    background-color: azure;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+img {
+    max-width: 15%;
+    border-radius: 15px;
+}
+
+/*references list styling; different than normal list*/
+.references {
+    background-color: transparent;
+}
+
+.references li img {
+    max-width: 3px;
+}
+
+/* navigation styling*/
+nav {
+    background-color: darkslategray;
+    width: 15%;
+    padding: 3%;
+    float: left;
+    height: 100vh;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 15% 0;
+    border-radius: 15%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: dimgrey;
+    font-weight: bold;
+    display: block;
+    padding: 10%;
+    border-radius: 15px;
+    text-align: center;
+}
