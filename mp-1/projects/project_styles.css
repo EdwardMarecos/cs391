@@ -2,6 +2,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+/*
+color palette
+#463f3a
+#8a817c
+#bcb8b1
+#f4f3ee
+#e0afa0
+*/
 
 #page-wrapper {
     width: 80vw;
@@ -13,7 +21,9 @@ header {
     flex-direction: column;
     position: relative;
     justify-content: space-between;
-    padding: 1vh 1vw;
+    padding: 2vh 2vw;
+    background-color: #463f3a;
+    color: #f4f3ee;
 }
 
 #container {
@@ -21,19 +31,97 @@ header {
     display: flex;
     flex-direction: row;
     position: relative;
-    background-color: dimgrey;
 }
 
 nav {
-    background-color: navajowhite;
+    background-color: #463f3a;
     padding: 1vh 1vw;
-    list-style: none;
 }
 
-nav a {
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2vh 0;
+    margin: 0;
+    justify-content: space-between;
+    height: 40vh;
+    position: sticky;
+    top: 0;
+}
+
+nav ul li {
+    padding: 0.5vh;
+    width: 100%;
+    text-align: center;
+    border: 1px white solid;
+    background-color: #8a817c;
+    border-radius: 6px;
+}
+
+nav ul li a {
     text-decoration: none;
     font-family: Cochin, Cambria, Georgia, Times, serif;
-    font-size: 100%;        /* switch off pixel :3 */
+    /*font-size: calc(2px + 2vw);*/ /* make only on big screens*/
     font-weight: bold;
-    color: chocolate;
+    padding: 0.25vh;
+    color: white;
+}
+
+main {
+    padding: 1vh 2vw;
+    display: flex;
+    gap: 2vh;
+    max-width: 100%;
+    background-color: #f4f3ee;
+    color: #463f3a;
+}
+
+main ul {
+    list-style: none;
+    padding: 2vh 0;
+    margin: 0;
+    width: 100%;
+}
+
+main ul li {
+    max-width: 100%;
+}
+
+h3 a{
+    color: #463f3a;
+    text-decoration: underline;
+    font-family: Cochin, Cambria, Georgia, Times, serif;
+    font-weight: bold;
+    padding: 0.25vh;
+}
+
+main ul li p {
+    display: flex;
+    font-family: cochin, Cambria, Georgia, Times, serif;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+li ul {
+    background-color: #c1c1c1;
+    list-style: square;
+    padding-left: 1%;
+}
+
+li ul li {
+    /*color: white;*/
+}
+
+/* i made a wrapper because the aspect ratio was not working on the iframe*/
+#video-wrapper {
+    max-width: 100%;
+    aspect-ratio: 16/9;
+}
+
+iframe {
+    max-width: 100%;
+    max-height: 100%;
 }
