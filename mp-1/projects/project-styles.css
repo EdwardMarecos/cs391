@@ -248,7 +248,7 @@ footer a {
         margin: 1vh 0.5vw;
     }
 
-    h3 a {
+    h3 {
         color: #22223b;
         text-decoration: underline;
         font-family: Cochin, Cambria, Georgia, Times, serif;
@@ -289,6 +289,21 @@ footer a {
         /*background-color: white;*/
         padding: 0;
         margin: 0;
+    }
+
+    /*list element including the calculator to the side rather than under*/
+    #list-calculator {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #description-pane {
+        width: 50%;
+    }
+
+    #calc-project-pane {
+        width: 50%;
     }
 
     iframe {
