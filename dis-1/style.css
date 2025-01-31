@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main-content,
+#error-content {
+    visibility: hidden;
+}
+
+#error-message{
+    color: red;
+}
+
+img {
+    max-width: 30vw;
+}
