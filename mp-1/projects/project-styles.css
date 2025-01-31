@@ -161,6 +161,33 @@ iframe {
     border-radius: 15px;
 }
 
+/*list element including the calculator to the side rather than under*/
+#list-calculator {
+    display: flex;
+    flex-direction: row;
+}
+
+#description-pane {
+    width: 50%;
+}
+
+#calc-project-pane {
+    width: 50%;
+}
+
+button {
+    background-color: #4a4e69;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    padding: .5vh 1vw;
+    margin: 1vh 0;
+}
+
+#output-val {
+    text-decoration: none;
+}
+
 #footer-wrapper {
     background-color: #f2e9e4;
 }
@@ -289,21 +316,6 @@ footer a {
         /*background-color: white;*/
         padding: 0;
         margin: 0;
-    }
-
-    /*list element including the calculator to the side rather than under*/
-    #list-calculator {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    #description-pane {
-        width: 50%;
-    }
-
-    #calc-project-pane {
-        width: 50%;
     }
 
     iframe {
