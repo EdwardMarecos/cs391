@@ -29,6 +29,7 @@ header {
     background-color: #22223b;
     color: #f2e9e4;
     border-radius: 0 0 15px 0;
+    font-size: calc(2px + 2vw);
 }
 
 #container {
@@ -42,7 +43,8 @@ header {
 nav {
     background-color: #22223b;
     padding: 1vh 1vw;
-    min-height: 100vh;
+    height: 100vh;
+    width: 30%;
 }
 
 nav ul {
@@ -53,7 +55,7 @@ nav ul {
     padding: 2vh 0;
     margin: 0;
     justify-content: space-between;
-    height: 40vh;
+    height: auto;
     position: sticky;
     top: 0;
 }
@@ -65,12 +67,13 @@ nav ul li {
     border: 1px #f2e9e4 solid;
     background-color: #4a4e69;
     border-radius: 6px;
+    margin: 0 0 3vh 0;
 }
 
 nav ul li a {
     text-decoration: none;
     font-family: Cochin, Cambria, Georgia, Times, serif;
-    /*font-size: calc(2px + 2vw);*/ /* make only on big screens*/
+    font-size: calc(2px + 1.4vw);
     font-weight: bold;
     padding: 0.25vh;
     color: #f6f6f6;
@@ -82,15 +85,17 @@ main {
     flex-direction: column;
     gap: 2vh;
     width: 100%;
+    min-height: 100vh;
+    height: 100%;
     background-color: #f2e9e4;
     color: #4a4e69;
     border-radius: 15px 0 0 15px;
+    font-size: calc(2px + 1.4vw);
 }
 
 img {
     width: 15vw;
     margin: 0;
-    border-radius: 15%;
 }
 
 main ul {
@@ -102,7 +107,6 @@ main ul {
 
 main ul li {
     max-width: 100%;
-    /*background-color: #c1c1c1;*/
     border-radius: 15px;
     padding: 1vh 1vw;
     margin: 1vh 0.5vw;
@@ -156,12 +160,15 @@ li ul li {
 }
 
 footer {
+    display: flex;
     background-color: #22223b;
     padding: 2vh 2vw;
     height: 100%;
     width: 100%;
     text-align: center;
     border-radius: 0 15px 0 0;
+    font-size: calc(2px + 1.6vw);
+    justify-content: center;
 }
 
 footer p {
@@ -173,4 +180,67 @@ footer a {
     color: white;
     font-family: Cochin, Cambria, Georgia, Times, serif;
     font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+
+    header {
+        align-items: center;
+        border-radius: 0;
+    }
+
+    #container {
+        width: 100%;
+        flex-direction: column;
+        background-color: #f2e9e4;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        padding: 1vh 1vw;
+        border-radius: 0 0 15px 15px;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        padding-left: 0;
+        height: auto;
+        overflow-x: scroll;             /* overflow for smaller screens */
+        -ms-overflow-style: none;       /* hidden scroll bar for ie and edge */
+        scrollbar-width: none;          /* hidden scroll bar for firefox */
+    }
+
+    nav ul::-webkit-scrollbar {         /* these hide the bar but keep functionality */
+        display: none;                  /* hidden scroll bar for chrome safari and opera */
+    }
+
+    nav ul li {
+        padding: 1% .5%;
+        margin: 1% .5%;
+        font-size: calc(2px + 1.5vw);
+    }
+
+    main ul li {
+        justify-items: center;
+    }
+    li ul {
+        list-style: none;
+    }
+
+    li ul li {
+        text-align: center;
+        padding: 2% .5%;
+    }
+
+    footer {
+        border-radius: 15px 15px 0 0;
+    }
+
+    footer p {
+        margin-left: 0;
+    }
+
 }

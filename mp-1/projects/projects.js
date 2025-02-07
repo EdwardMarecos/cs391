@@ -1,4 +1,4 @@
-function add() {
+function addition() {
     let val1=document.getElementById("val1").value;
     let val2=document.getElementById("val2").value;
     let output=Number(val1)+Number(val2);
@@ -31,8 +31,17 @@ function power() {
     let val2=document.getElementById("val2").value;
 
     let output=1;
-    for(let i=0;i<val2;i++){
-        output=val1*output;
+    // in the case that the second val is < 0 the answer is a fraction
+    if (val2 < 0) {
+        let flip = val2 * -1;
+        for (let i=0; i<flip; i++) {
+            output=val1*output;
+        }
+        output=1/output;
+    } else {
+        for(let i=0;i<val2;i++){
+            output=val1*output;
+        }
     }
 
     aboveOrBelow(output);
