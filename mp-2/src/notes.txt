@@ -1,0 +1,58 @@
+// import GeminiPrice from "./components/GeminiPrice.tsx";
+import SymbolList from "./components/SymbolList.tsx";
+import SymbolDetailsPage from "./components/SymbolDetailsPage";
+// import styled from "styled-components";
+// import { GeminiData } from "./interfaces/GeminiData.ts";
+import './App.css';
+// import {useEffect, useState} from "react";
+import {useState} from "react";
+
+// const ParentDiv=styled.div`
+//     width: 80vw;
+//     margin: auto;
+//     border: 5px darkgoldenrod solid;
+// `;
+
+export default function App() {
+
+    const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null);
+
+    return (
+        <div>
+            <h1>Gemini Crypto Tracker</h1>
+            {!selectedSymbol ? (
+                <SymbolList onSelect={setSelectedSymbol} />
+            ) : (
+                <SymbolDetailsPage symbol={selectedSymbol} />
+            )}
+        </div>
+    );
+   // const [data, setData] = useState<GeminiData | null>(null);
+   // const [loading, setLoading] = useState(true);
+   //
+   //  useEffect(() => {
+   //      const fetchData = async () => {
+   //          try {
+   //              const response = await fetch("https://api.gemini.com/v2/ticker/btcusd");
+   //              if (!response.ok) {
+   //                  throw new Error(`Error: ${response.statusText}`);
+   //              }
+   //              const data: GeminiData = await response.json();
+   //              setData(data);
+   //          } catch (error) {
+   //              console.error("Failed to fetch crypto data:", error);
+   //          } finally {
+   //              setLoading(false);
+   //          }
+   //      };
+   //
+   //      fetchData();
+   //  }, []);
+   //
+   //  return (
+   //      <ParentDiv>
+   //          <h1>Bitcoin Price Tracker</h1>
+   //          {loading ? <p>Loading...</p> : data && <GeminiPrice data={data} />}
+   //      </ParentDiv>
+   //  );
+}
