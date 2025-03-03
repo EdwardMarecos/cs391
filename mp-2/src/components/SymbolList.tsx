@@ -9,6 +9,14 @@ const SymbolContainer = styled.div`
     overflow-y: auto;
     overflow-x: hidden;
     border: 1px blue solid;
+
+    // similarly to mp1, hide the scrollbar but keep functionality
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 const SymbolButton = styled.button`
@@ -16,11 +24,11 @@ const SymbolButton = styled.button`
     color: white;
     cursor: pointer;
     text-transform: uppercase;
-    //border: 1px magenta solid;
+    font-size: calc(2px + 1.3vw);
 
-  &:hover {
-    background: #646cff;
-  }
+    &:hover {
+        background: #646cff;
+    }
 `;
 
 export default function SymbolList({ onSelect }: { onSelect: (symbol: string) => void }) {

@@ -2,6 +2,7 @@ import { useState } from "react";
 import SymbolList from "./components/SymbolList";
 import MarketPage from "./components/MarketPage";
 import GeminiPrice from "./components/GeminiPrice";
+import CryptoHistory from "./components/CryptoHistory";
 import styled from "styled-components";
 
 const PageWrapper = styled.div`
@@ -14,6 +15,7 @@ const PageWrapper = styled.div`
 `;
 
 const CryptoWrapper = styled.div`
+    font-size: calc(2px + 1.3vh);
     display: flex;
     flex-direction: column;
     padding: 5vh 0.5vw;
@@ -25,7 +27,8 @@ const Sidebar = styled.div`
     width: 20%;
     border: 5px mediumpurple solid;
     overflow-y: hidden;
-    
+    font-size: calc(2px + 1vw);
+
     h2 {
         margin: 5vh 0 1vh 0;
     }
@@ -38,6 +41,10 @@ const MarketContent = styled.div`
         margin: 0 0 1vh 0;
     }
 `;
+
+const History = styled.div`
+    
+`
 
 const GeminiPriceContainer = styled.div`
 display: flex;
@@ -56,6 +63,9 @@ export default function App() {
                 <GeminiPriceContainer>
                     <GeminiPrice symbol={selectedSymbol} />
                 </GeminiPriceContainer>
+                <History>
+                    <CryptoHistory symbol={selectedSymbol} />
+                </History>
             </CryptoWrapper>
             <Sidebar>
                 <h2>Crypto Symbols</h2>

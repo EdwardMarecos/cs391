@@ -19,28 +19,38 @@ export default function MarketPage({ symbol }: { symbol: string }) {
     const [symbolDetails, setSymbolDetails] = useState<SymbolDetails | null>(null);
     const [networkData, setNetworkData] = useState<NetworkData | null>(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
-    // the timestamp denotes ms so it's not very useful unless we make it a readable date and time
+    // Format timestamp for readability
     const formatTimestamp = (timestampms: number) => {
         return new Date(timestampms).toLocaleString();
     };
 
     useEffect(() => {
         const fetchMarketData = async () => {
+            setLoading(true);
+            setError(null);
+
             try {
                 const marketResponse = await fetch(`https://api.gemini.com/v1/pubticker/${symbol}`);
-                const marketResult: MarketData = await marketResponse.json();
+                const marketResult = await marketResponse.json();
+                if (marketResult.errorMessage) throw new Error(marketResult.errorMessage);
                 setMarketData(marketResult);
 
                 const symbolResponse = await fetch(`https://api.gemini.com/v1/symbols/details/${symbol}`);
-                const symbolResult: SymbolDetails = await symbolResponse.json();
+                const symbolResult = await symbolResponse.json();
+                if (symbolResult.errorMessage) throw new Error(symbolResult.errorMessage);
                 setSymbolDetails(symbolResult);
 
-                const networkResponse = await fetch(`https://api.gemini.com/v1/network/${symbolResult.base_currency}`);
-                const networkResult: NetworkData = await networkResponse.json();
-                setNetworkData(networkResult);
-            } catch (error) {
-                console.error("Failed to fetch data:", error);
+                // Only fetch network data if base_currency is valid
+                if (symbolResult.base_currency) {
+                    const networkResponse = await fetch(`https://api.gemini.com/v1/network/${symbolResult.base_currency}`);
+                    const networkResult = await networkResponse.json();
+                    if (networkResult.errorMessage) throw new Error(networkResult.errorMessage);
+                    setNetworkData(networkResult);
+                }
+            } catch (err) {
+                setError((err as Error).message);
             } finally {
                 setLoading(false);
             }
@@ -54,11 +64,16 @@ export default function MarketPage({ symbol }: { symbol: string }) {
             <h2>{symbol.toUpperCase()} Market Data</h2>
             {loading ? (
                 <p>Loading...</p>
-            ) : marketData && symbolDetails && networkData ? (
+            ) : error ? (
+                <p style={{ color: "red" }}>{error}</p>
+            ) : marketData && symbolDetails ? (
                 <>
-                    <p>Volume (BTC): {marketData.volume.BTC}</p>
-                    <p>Volume (USD): {marketData.volume.USD}</p>
+                    <h3>Volume</h3>
+                    {Object.entries(marketData.volume).map(([currency, amount]) =>
+                        currency !== "timestamp" ? <p key={currency}>Volume ({currency}): {amount}</p> : null
+                    )}
                     <p>Last Updated: {formatTimestamp(marketData.volume.timestamp)}</p>
+
                     <hr />
                     <h3>Symbol Details</h3>
                     <p>Base Currency: {symbolDetails.base_currency}</p>
@@ -67,10 +82,15 @@ export default function MarketPage({ symbol }: { symbol: string }) {
                     <p>Product Type: {symbolDetails.product_type}</p>
                     <p>Contract Type: {symbolDetails.contract_type}</p>
                     <p>Status: {symbolDetails.status}</p>
-                    <hr />
-                    <h3>Network Information</h3>
-                    <p>Token: {networkData.token}</p>
-                    <p>Supported Networks: {networkData.network.join(", ")}</p>
+
+                    {networkData && (
+                        <>
+                            <hr />
+                            <h3>Network Information</h3>
+                            <p>Token: {networkData.token}</p>
+                            <p>Supported Networks: {networkData.network.join(", ")}</p>
+                        </>
+                    )}
                 </>
             ) : (
                 <p>Failed to load data.</p>
