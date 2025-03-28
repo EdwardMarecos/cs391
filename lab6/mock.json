@@ -1,0 +1,38 @@
+{
+  "mockPosts": [
+    {
+      "id": "id1",
+      "title": "fav class",
+      "content": "cs391 is my fv class hbu",
+      "upvotes":20,
+      "downvotes": 1
+    },
+    {
+      "id": "id2",
+      "title": "resturants in bawston",
+      "content": "where gud to eat",
+      "upvotes":12,
+      "downvotes": 6
+    },{
+      "id": "id3",
+      "title": "postgrad",
+      "content": "lemme out",
+      "upvotes":22,
+      "downvotes": 28
+    },
+    {
+      "id": "id4",
+      "title": "cs class recs",
+      "content": "ez class plz",
+      "upvotes":13,
+      "downvotes": 9
+    },
+    {
+      "id": "id5",
+      "title": "stoody spots",
+      "content": "where to go",
+      "upvotes":20,
+      "downvotes": 3
+    }
+  ]
+}
